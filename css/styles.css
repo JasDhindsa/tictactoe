@@ -62,3 +62,90 @@ button {
    cursor: pointer;
 }
 
+#game-container {
+   display: grid;
+   grid-template-columns: repeat(3, 170px);
+   grid-template-rows: 45px repeat(3, 170px) 80px;
+   row-gap: 20px;
+   column-gap: 20px;
+   align-items: stretch;
+}
+
+#logo {
+   width: 60px;
+   align-self: center;
+}
+
+#player-turn {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: var(--gray);
+   font-size: 30px;
+   letter-spacing: 1px;
+   border-bottom: 4px solid var(--almost-black);
+}
+
+#player-turn #player-turn-symbol {
+   width: 16px;
+   margin-right: 10px;
+}
+
+#player-turn span {
+  font-size: 18px;
+}
+
+#reset-btn {
+   height: 45px;
+   width: 45px;
+   justify-self: flex-end;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-bottom: 3px solid var(--dark-gray);
+}
+
+#reset-btn img {
+   transform: rotateY(180deg) rotateZ(35deg);
+   width: 25px;
+}
+
+.grid-cell {
+   background-color: var(--dark-blue);
+   border-bottom: 7px solid var(--almost-black);
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 45%;
+   transition: background-color 0.25s;
+}
+
+.grid-cell.no-events {
+   pointer-events: none;
+}
+
+.grid-cell.x {
+   background-image: url("../assets/x.svg");
+   pointer-events: none;
+}
+
+.grid-cell.o {
+   background-image: url("../assets/o.svg");
+   pointer-events: none;
+}
+
+.grid-cell.winner {
+   background-color: var(--light-blue);
+   border-bottom: 7px solid var(--darker-light-blue);
+}
+
+.grid-cell.x.winner {
+   background-image: url("../assets//x_dark_blue.svg");
+}
+
+.grid-cell.o.winner {
+   background-image: url("../assets/o_dark_blue.svg");
+}
