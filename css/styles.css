@@ -149,3 +149,91 @@ button {
 .grid-cell.o.winner {
    background-image: url("../assets/o_dark_blue.svg");
 }
+
+.score {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: var(--almost-black);
+   letter-spacing: 1px;
+}
+
+.score .score-num {
+   font-weight: 700;
+   font-size: 25px;
+   margin-top: 1px;
+}
+
+#game-result-container {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   background: rgba(0, 0, 0, 0.5);
+   opacity: 1;
+   transition: opacity 0.3s;
+}
+
+#game-result-container.hide {
+   opacity: 0;
+   pointer-events: none;
+}
+
+#game-result-mssg {
+   background-color: var(--dark-blue);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   width: 100%;
+   padding: 50px 0;
+   height: 220px;
+   transition: 0.5s;
+}
+
+#game-result-mssg.grow {
+   height: 275px;
+}
+
+#game-result-mssg > * {
+   opacity: 0;
+   transition: opacity 0.6s, transform 0.6s;
+}
+
+#game-result-mssg > *.fade-in {
+   opacity: 1;
+   transform: translateX(0);
+}
+
+#game-result-mssg h2 {
+   color: var(--gray);
+   transform: translateX(-125px);
+}
+
+#game-result-mssg h1 {
+   color: var(--light-blue);
+   display: flex;
+   align-items: center;
+   font-size: 50px;
+   transform: translateX(150px);
+}
+
+#game-result-mssg h1.loser {
+   color: var(--light-orange);
+}
+
+#game-result-mssg h1.tie {
+   color: var(--gray);
+}
+
+#game-result-mssg h1 img {
+   margin-right: 25px;
+}
+
+#game-result-mssg h1 img.hide {
+   display: none;
+}
